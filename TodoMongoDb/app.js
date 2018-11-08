@@ -20,3 +20,11 @@ app.use(bodyParser.json());
 
 //Add morgan for logs
 app.use(morgan('short'))
+
+app.get('/', (req,res)=>{
+    res.send('Welcome !')
+})
+
+app.listen(port, ()=>{
+    console.log('Application started on PORT' + port)
+})
