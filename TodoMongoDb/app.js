@@ -21,10 +21,17 @@ app.use(bodyParser.json());
 //Add morgan for logs
 app.use(morgan('short'))
 
+//Initialize the routes
+var User = require('./models/user.model');
+var userRoute = require('../TodoMongoDb/routes/user.routes');
+userRoute(app);
+
+//Welcome page
 app.get('/', (req,res)=>{
     res.send('Welcome !')
 })
 
+//Listen at port
 app.listen(port, ()=>{
     console.log('Application started on PORT' + port)
 })
