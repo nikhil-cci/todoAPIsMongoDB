@@ -9,3 +9,6 @@ const express = require('express'),
 //initialize express and port
 app = express();
 var port = process.env.PORT || 3001
+
+mongoose.Promise = global.Promise;
+mongoose.connect(process.env.DB_HOST, { useNewUrlParser: true });
